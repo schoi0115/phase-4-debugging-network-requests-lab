@@ -8,11 +8,13 @@ function App() {
   const [showForm, setShowForm] = useState(false);
   const [toys, setToys] = useState([]);
 
+
   useEffect(() => {
-    fetch("/toys")
+    fetch("http://localhost:4000/toys")
       .then((r) => r.json())
       .then(setToys);
   }, []);
+
 
   function handleClick() {
     setShowForm((showForm) => !showForm);
